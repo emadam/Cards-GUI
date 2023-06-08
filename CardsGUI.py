@@ -4,7 +4,7 @@ import os
 import re
 from datetime import datetime
 
-rmr_icon = r'C:\Users\emad.aminmoghadam\PycharmProjects\pythonProject\SelectCards GUI\RMR.ico'
+rmr_icon = $ICON_DIR
 version = '1.3.1'
 input_bcp = ''
 
@@ -248,7 +248,7 @@ def main():
                      'It provides features such as selecting cards, replacing data in BCP files,'
                      ' and sorting BCP files.',
                      'For more information and support, please contact:',
-                     'emad.aminmoghadam@roymorgan.com',
+                     'user@example.com',
                      font=('Calibri', 11),
                      background_color='white',
                      text_color='black',
@@ -503,7 +503,7 @@ def main():
                 window['-OUTPUT_FILE-'].Update(background_color='lightgray')
                 if data_store != 'BCP':
                     if not dis_month:
-                        command = ["Y:\\ASTEROID\\Builder_Unreleased\\SELECTCARDS", cards_list, months_list, data_store, output_file]
+                        command = [$COMMAND, cards_list, months_list, data_store, output_file]
                         try:
                             # Execute the command with a progress bar
                             progress_bar = sg.ProgressBar(100, orientation='h', size=(20, 20), bar_color=('blue', 'gray'), )
@@ -576,7 +576,7 @@ def main():
                                         sg.popup_notify("Please Wait, this process might take a few seconds...")
                                         # Launch the subprocess
                                         dat_file = f'{os.path.splitext(output_file)[0]}.dat'
-                                        command2 = ["Y:\\Asteroid\\cpangloss", "P", "Q", output_file, dat_file]
+                                        command2 = [$COMMAND, "P", "Q", output_file, dat_file]
                                         process2 = subprocess.Popen(command2, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                                                     universal_newlines=True,
                                                                     creationflags=subprocess.CREATE_NO_WINDOW)
@@ -628,7 +628,7 @@ def main():
                                 window3 = sg.Window('ReplaceCards', layout, finalize=True, keep_on_top=True, icon=rmr_icon)
                                 window3.refresh()
 
-                                command = ["Y:\\ASTEROID\\Builder_Unreleased\\REPLACECARDS", input_rep, updates_file_name,
+                                command = [$COMMAND, input_rep, updates_file_name,
                                            output_file_rep]
                                 process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                                            universal_newlines=True, creationflags=subprocess.CREATE_NO_WINDOW)
@@ -701,7 +701,7 @@ def main():
                             window[key].update(disabled=True)
                         output_file = os.path.splitext(output_file)[0]
                         for month in months:
-                            command = ["Y:\\ASTEROID\\Builder_Unreleased\\SELECTCARDS", cards_list, month, data_store,
+                            command = [$COMMAND, cards_list, month, data_store,
                                        f'{output_file}_{month}.bcp']
                             try:
                                 # Execute the command with a progress bar
@@ -764,7 +764,7 @@ def main():
                                             # Launch the subprocess
                                             dat_file = f'{os.path.splitext(output_file)[0]}_{month}.dat'
                                             bcp_file = f'{os.path.splitext(output_file)[0]}_{month}.bcp'
-                                            command2 = ["Y:\\Asteroid\\cpangloss", "P", "Q", bcp_file, dat_file]
+                                            command2 = [$COMMAND, "P", "Q", bcp_file, dat_file]
                                             process2 = subprocess.Popen(command2, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                                                         universal_newlines=True,
                                                                         creationflags=subprocess.CREATE_NO_WINDOW)
@@ -802,7 +802,7 @@ def main():
                         for key in ['REPLACE CARDS', 'SORT CARDS']:
                             window[key].update(disabled=False)
                 elif input_bcp and data_store == 'BCP':
-                    command = ["Y:\\ASTEROID\\Builder_Unreleased\\SELECTCARDS2", input_bcp, "78,80", cards_list, output_file]
+                    command = [$COMMAND, input_bcp, "78,80", cards_list, output_file]
                     try:
                         # Execute the command with a progress bar
                         progress_bar = sg.ProgressBar(100, orientation='h', size=(20, 20), bar_color=('blue', 'gray'), )
@@ -868,7 +868,7 @@ def main():
                                     sg.popup_notify("Please Wait, this process might take a few seconds...")
                                     # Launch the subprocess
                                     dat_file = f'{os.path.splitext(output_file)[0]}.dat'
-                                    command2 = ["Y:\\Asteroid\\cpangloss", "P", "Q", output_file, dat_file]
+                                    command2 = [$COMMAND, "P", "Q", output_file, dat_file]
                                     process2 = subprocess.Popen(command2, stdout=subprocess.PIPE,
                                                                 stderr=subprocess.STDOUT,
                                                                 universal_newlines=True,
@@ -949,7 +949,7 @@ def main():
                 continue
             window['-REPLACED_FILE-'].Update(background_color='ivory2')
 
-            command = ["Y:\\ASTEROID\\Builder_Unreleased\\REPLACECARDS", master_file, updates_file, output_file]
+            command = [$COMMAND, master_file, updates_file, output_file]
             try:
                 process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                            universal_newlines=True, creationflags=subprocess.CREATE_NO_WINDOW)
@@ -1035,7 +1035,7 @@ def main():
                     continue
                 window['-SORTED_FILE-'].Update(background_color='ivory2')
 
-                command = ["Y:\\ASTEROID\\Builder_Unreleased\\SORTBCP", input_file, '2, 1, 9, 78, 80', output_file]
+                command = [$COMMAND, input_file, '2, 1, 9, 78, 80', output_file]
                 try:
                     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                                universal_newlines=True, creationflags=subprocess.CREATE_NO_WINDOW)
@@ -1094,7 +1094,7 @@ def main():
                     continue
                 window['-SORTED_FILE-'].Update(background_color='ivory2')
 
-                command = ["Y:\\ASTEROID\\Builder_Unreleased\\SORTBCP", f"{input_file}, {input_merge}", '2, 1, 9, 78, 80', output_file]
+                command = [$COMMAND, f"{input_file}, {input_merge}", '2, 1, 9, 78, 80', output_file]
                 try:
                     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                                universal_newlines=True, creationflags=subprocess.CREATE_NO_WINDOW)
