@@ -6,10 +6,10 @@ Cards-GUI is a Python-based graphical user interface (GUI) application for manag
 
 - Select cards from a file containing a list of cards. 🗂️
 - Choose specific months to select data for. 📅
-- Select data from different survey types (TOT, ES, or BCP). 📊
+- Select data from different survey types. 📊
 - Specify the output file name for generated data. 💾
 - Option to open the output directory after completion. 📂
-- Generate a DAT file using CPANGLOSS. 📁
+- Generate a DAT file. 📁
 - Create discrete BCP files for each month in the list. 🗂️📅
 - Replace cards in a master file with a created BCP file. 🔄
 - Sort a BCP file and specify the output sorted file name. 🔢
