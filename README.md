@@ -2,8 +2,11 @@
 
 Cards-GUI is a Python-based graphical user interface (GUI) application for managing and displaying a deck of cards. ♠️♦️♥️♣️
 
-![image](https://github.com/emadam/Cards-GUI/assets/15064857/d3c15791-abd1-4ae4-84bd-98c5a5167e69)
+ 
 
+| General view                                                                                       | Popup progress bar                                                                                  |
+| -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| ![image](https://github.com/emadam/Cards-GUI/assets/15064857/d3c15791-abd1-4ae4-84bd-98c5a5167e69) |  ![image](https://github.com/emadam/Cards-GUI/assets/15064857/e9b9e930-3f39-40be-9b42-3a8457a44ed3) |
 
 ## Features 🎯
 
