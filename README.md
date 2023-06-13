@@ -1,6 +1,6 @@
 # 🃏 Cards-GUI 🖥️
 
-Cards-GUI is a Python-based graphical user interface (GUI) application for managing and displaying a deck of cards. ♠️♦️♥️♣️
+Cards-GUI is a Python-based graphical user interface (GUI) application for managing data. 
 
  
 
